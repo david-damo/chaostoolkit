@@ -1,0 +1,30 @@
+{
+  "title": "Experiment to send JSON data with Content-Length header",
+  "description": "An example experiment to demonstrate sending JSON data with Content-Length header using Chaos Toolkit",
+  "method": "experiment",
+  "tags": [],
+  "contributions": [],
+  "steady-state-hypothesis": {
+    "title": "Service is running",
+    "probes": []
+  },
+  "method": [
+    {
+      "type": "action",
+      "name": "send_json_with_content_length",
+      "provider": {
+        "type": "http",
+        "url": "http://localhost:8080/users",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/json",
+          "Content-Length": "164"
+        },
+        "arguments": {
+        	"username": "sanjeev",
+        	"email": "abc@example.com"
+        }
+      }
+    }
+  ]
+}

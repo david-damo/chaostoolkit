@@ -1,0 +1,62 @@
+{
+  "title": "Spring Boot POST Request Chaos Experiment",
+  "description": "An experiment to test the resilience of a Spring Boot application by inducing chaos through POST requests.",
+  "tags": ["spring-boot", "chaos-engineering", "http-requests"],
+  "steady-state-hypothesis": {
+    "title": "Application is stable under normal conditions",
+    "probes": [
+      {
+        "name": "Application health check",
+        "type": "probe",
+        "tolerance": "0.95",
+        "provider": {
+          "type": "http",
+          "url": "http://localhost:8080/actuator/health",
+          "method": "GET",
+          "status": 200
+        }
+      }
+    ]
+  },
+  "method": "experiment",
+  "method-parameters": {
+    "type": "http",
+    "url": "http://localhost:8080/users",
+    "method": "POST",
+     
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+        	"username": "sanjeev",
+        	"email": "abc@example.com"
+        }
+  },
+  "rollback-method": "http",
+  "rollback-method-parameters": {
+    "url": "http://localhost:8080/api/rollback",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  },
+  "steady-state-analysis": {
+    "title": "Steady State Analysis",
+    "probes": [
+      {
+        "name": "Application health check",
+        "type": "probe",
+        "tolerance": "0.95",
+        "provider": {
+          "type": "http",
+          "url": "http://localhost:8080/actuator/health",
+          "method": "GET",
+          "status": 200
+        }
+      }
+    ]
+  },
+  "rollback": true,
+  "controls": [],
+  "strategy": "default"
+}
