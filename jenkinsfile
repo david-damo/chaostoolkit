@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                // Checkout source code from the repository
+                git 'https://github.com/david-damo/chaostoolkit.git'
+                
+                // Build the Maven project
+                sh 'mvn clean package'
+            }
+            post {
+                success {
+                    // Archive artifacts
+                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+                }
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                // Run tests using Maven
+                sh 'mvn test'
+            }
+            post {
+                always {
+                    // Publish JUnit test results
+                    junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+    }
+}
