@@ -9,12 +9,7 @@ pipeline {
                 // Build the Maven project
                 sh 'mvn clean package'
             }
-            post {
-                success {
-                    // Archive artifacts
-                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
-                }
-            }
+          
         }
         
         stage('Test') {
