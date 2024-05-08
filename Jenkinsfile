@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Checkout source code from the repository
-                git branch: 'main'
+                git branch: 'main',
                     url: 'https://github.com/david-damo/chaostoolkit.git'
                 
                 // Build the Maven project
