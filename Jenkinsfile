@@ -23,6 +23,20 @@ pipeline {
                     // Publish JUnit test results
                     junit 'target/surefire-reports/*.xml'
                 }
+                success {
+                    emailext (
+                        to: 'sanjeev.jha77@gmail.com',
+                        subject: 'Pipeline Success Notification',
+                        body: 'Your pipeline has succeeded. Good job!',
+                    )
+                }
+                failure {
+                    emailext (
+                        to: 'sanjeev.jha77@gmail.com',
+                        subject: 'Pipeline Failure Notification',
+                        body: 'Your pipeline has failed. Please check the logs for details.',
+                    )
+                }
             }
         }
     }
