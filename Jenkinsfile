@@ -62,8 +62,12 @@ pipeline {
             {
                 script 
                 {
-                	sleep(time: 180, unit: 'SECONDS')
-                    sh 'python3 -m venv myenv'
+                	//sleep(time: 180, unit: 'SECONDS')
+                	sh '''
+                    echo "sanjeev | sudo -S python3 -m venv myenv"
+                    
+                '''
+                    //sh 'python3 -m venv myenv'
                 }
             }
         }
