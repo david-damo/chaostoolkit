@@ -120,11 +120,23 @@ pipeline {
         stage('Run Chaos Script') {
             steps {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
+                
                 sh '''
                 cd experiments
                 pwd
                 ls
-                echo "sanjeev | sudo -S chaos run ${pwd}/experiment5.json"
+                def filePath = '${pwd}/experiment5.json'
+                if (fileExists(filePath)) {
+                        // File exists, proceed with further steps
+                        echo "File exists at ${filePath}. Proceeding with further steps..."
+                        echo "sanjeev | sudo -S chaos run ${pwd}/experiment5.json"
+                        // Add your additional steps here
+                    } else {
+                        // File does not exist, handle the case accordingly
+                        echo "File does not exist at ${filePath}. Skipping further steps..."
+                        // You can abort the pipeline or perform other actions as needed
+                    }
+                //echo "sanjeev | sudo -S chaos run ${pwd}/experiment5.json"
                 '''
             }
 
