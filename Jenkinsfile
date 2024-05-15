@@ -46,9 +46,8 @@ pipeline {
                     //sh "echo $PASSWORD | sudo -S apt install -y python3 python3-pip"
                     //}
                 sh '''
-                    echo "sanjeev" | sudo -S apt update
-                    echo "sanjeev"
-                    cho "sanjeev" | sudo -S apt install -y python3 python3-pip
+                    echo "sanjeev" | sudo -S apt update | echo "sanjeev"
+                    echo "sanjeev" | sudo -S apt install -y python3 python3-pip
                     echo "sanjeev"
                 '''
                 //sh 'apt update'
