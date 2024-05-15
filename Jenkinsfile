@@ -36,7 +36,7 @@ pipeline {
         {
             steps 
             {
-            	sh 'sudo rm /var/lib/apt/lists/lock'
+            	sh 'sudo su'
                 sh 'apt update'
                 sh 'apt install -y python3 python3-pip'
             }
