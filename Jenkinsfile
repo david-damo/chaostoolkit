@@ -36,6 +36,7 @@ pipeline {
         {
             steps 
             {
+            	echo "Python is already installed"
                 //sh 'apt update'
                 //sh 'apt install -y python3 python3-pip'
             }
