@@ -95,6 +95,7 @@ pipeline {
                 {
                     //sh 'pip install chaostoolkit'
                     sh '''
+                    echo "sanjeev | sudo -S apt install python3-pip"
                     echo "sanjeev | sudo -S pip install chaostoolkit"
                     
                 '''
