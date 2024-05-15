@@ -48,7 +48,7 @@ pipeline {
                 sh '''
                     echo "sanjeev | sudo -S apt update"
                     echo "sanjeev | sudo -S apt install -y python3 python3-pip"
-                    echo "sanjeev | sudo -S apt install python3-venv"
+                    echo "sanjeev | sudo -S apt install python3.10-venv"
                     
                 '''
                 //sh 'apt update'
@@ -62,6 +62,7 @@ pipeline {
             {
                 script 
                 {
+                	sleep(time: 180, unit: 'SECONDS')
                     sh 'python3 -m venv myenv'
                 }
             }
