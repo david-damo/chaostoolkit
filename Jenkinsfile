@@ -78,7 +78,7 @@ pipeline {
             {
                 script 
                 {
-                    sh 'source myenv/bin/activate'
+                    sh 'source ./myenv/bin/activate'
                 }
             }
         }
