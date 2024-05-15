@@ -108,16 +108,20 @@ pipeline {
             {
                 script 
                 {
+                	sh '''
                     //sh 'pip install chaostoolkit-spring'
                     echo "sanjeev | sudo -S pip install chaostoolkit-spring"
+                    '''
                 }
             }
         }
         stage('Run Chaos Script') {
             steps {
-
+				sh '''
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
+                pwd
                 echo "sanjeev | sudo -S chaos run experiments/experiment5.json"
+                '''
             }
 
             post {
