@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        // Define the password credential ID
+        PASSWORD_CREDENTIAL = 'sanjeev'
+    }
     stages 
     {
         stage('Build') 
@@ -36,7 +40,11 @@ pipeline {
         {
             steps 
             {
-            	echo "Python is already installed"
+            	withCredentials([string(credentialsId: env.PASSWORD_CREDENTIAL, variable: 'PASSWORD')]) {
+                    // Run the command with sudo and pass the password
+                    sh "echo $PASSWORD | sudo -S apt update"
+                    sh "echo $PASSWORD | sudo -S apt install -y python3 python3-pip"
+                    }
                 //sh 'apt update'
                 //sh 'apt install -y python3 python3-pip'
             }
