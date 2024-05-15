@@ -125,8 +125,8 @@ pipeline {
                 cd experiments
                 pwd
                 ls
-                def filePath = '${pwd}/experiment5.json'
-                if (fileExists(filePath)) {
+                //def filePath = '${pwd}/experiment5.json'
+                if (fileExists('${pwd}/experiment5.json')) {
                         // File exists, proceed with further steps
                         echo "File exists at ${filePath}. Proceeding with further steps..."
                         echo "sanjeev | sudo -S chaos run ${pwd}/experiment5.json"
