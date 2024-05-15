@@ -111,6 +111,7 @@ pipeline {
                 	//sh 'pip install chaostoolkit-spring'
                 	sh '''
                 	pwd
+                	ll
                     echo "sanjeev | sudo -S pip install chaostoolkit-spring"
                     '''
                 }
@@ -121,6 +122,7 @@ pipeline {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
                 sh '''
                 pwd
+                ll
                 echo "sanjeev | sudo -S chaos run experiments/experiment5.json"
                 '''
             }
