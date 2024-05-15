@@ -40,11 +40,15 @@ pipeline {
         {
             steps 
             {
-            	withCredentials([string(credentialsId: env.PASSWORD_CREDENTIAL, variable: 'PASSWORD')]) {
+            	//withCredentials([string(credentialsId: env.PASSWORD_CREDENTIAL, variable: 'PASSWORD')]) {
                     // Run the command with sudo and pass the password
-                    sh "echo $PASSWORD | sudo -S apt update"
-                    sh "echo $PASSWORD | sudo -S apt install -y python3 python3-pip"
-                    }
+                    //sh "echo $PASSWORD | sudo -S apt update"
+                    //sh "echo $PASSWORD | sudo -S apt install -y python3 python3-pip"
+                    //}
+                sh '''
+                    echo "sanjeev" | sudo -S apt update
+                    cho "sanjeev" | sudo -S apt install -y python3 python3-pip
+                '''
                 //sh 'apt update'
                 //sh 'apt install -y python3 python3-pip'
             }
