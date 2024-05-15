@@ -124,7 +124,7 @@ pipeline {
                 cd experiments
                 pwd
                 ls
-                echo "sanjeev | sudo -S chaos run experiment5.json"
+                echo "sanjeev | sudo -S chaos run ${pwd}/experiment5.json"
                 '''
             }
 
