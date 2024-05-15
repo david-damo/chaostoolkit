@@ -78,8 +78,11 @@ pipeline {
             {
                 script 
                 {
-                    //sh 'source ./myenv/bin/activate'
-                    sh '. myenv/bin/activate'
+                    //sh 'source myenv/bin/activate'
+                    sh '''
+                    echo "sanjeev | sudo -S source myenv/bin/activate"
+                    
+                '''
                 }
             }
         }
