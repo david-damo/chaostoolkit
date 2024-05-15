@@ -108,8 +108,9 @@ pipeline {
             {
                 script 
                 {
+                	//sh 'pip install chaostoolkit-spring'
                 	sh '''
-                    //sh 'pip install chaostoolkit-spring'
+                	pwd
                     echo "sanjeev | sudo -S pip install chaostoolkit-spring"
                     '''
                 }
