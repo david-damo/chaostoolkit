@@ -121,9 +121,9 @@ pipeline {
             steps {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
                 sh '''
-                pwd
+                cd experiments
                 ls
-                echo "sanjeev | sudo -S chaos run experiments/experiment5.json"
+                echo "sanjeev | sudo -S chaos run experiment5.json"
                 '''
             }
 
