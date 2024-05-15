@@ -116,8 +116,8 @@ pipeline {
         stage('Run Chaos Script') {
             steps {
 
-                //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment5.json"
-                echo "sanjeev | sudo -S chaos run experiments/experiment2.json"
+                //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
+                echo "sanjeev | sudo -S chaos run experiments/experiment5.json"
             }
 
             post {
