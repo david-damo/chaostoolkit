@@ -93,7 +93,11 @@ pipeline {
             {
                 script 
                 {
-                    sh 'pip install chaostoolkit'
+                    //sh 'pip install chaostoolkit'
+                    sh '''
+                    echo "sanjeev | sudo -S pip install chaostoolkit"
+                    
+                '''
                 }
             }
         }
