@@ -36,8 +36,8 @@ pipeline {
         {
             steps 
             {
-                sh 'sudo -s apt update'
-                sh 'sudo -s apt install -y python3 python3-pip'
+                sh 'sudo apt update'
+                sh 'sudo apt install -y python3 python3-pip'
             }
         }
         
