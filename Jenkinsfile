@@ -125,11 +125,12 @@ pipeline {
 	                cd experiments
 	                pwd
 	                ls
-	                def filePath = '/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json'
+	                
 
                     // Check if the file exists
                     script{
-                    if (filePath) {
+                    def filePath = '/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json'
+                    if (fileExists(filePath)) {
                         echo "File exists: $filePath"
                         // Add steps here to execute if the file exists
                     } else {
