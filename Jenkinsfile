@@ -50,7 +50,7 @@ pipeline {
                     echo "sanjeev | sudo -S apt install -y python3 python3-pip"
                     //echo "sanjeev | sudo -S apt install python3.10-venv"
                     echo "sanjeev | sudo -S pip install virtualenv"
-                    echo"sanjeev" | sudo virtualenv myenv
+                    echo "sanjeev | sudo virtualenv myenv"
                     
                 '''
                 //sh 'apt update'
