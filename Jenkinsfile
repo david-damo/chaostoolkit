@@ -125,7 +125,7 @@ pipeline {
 	                cd experiments
 	                pwd
 	                ls
-	                echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
+	                echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment5.json"
 
                     
                 '''
