@@ -128,9 +128,7 @@ pipeline {
 	                
 
                     // Check if the file exists
-                    script{
-                    echo "File exists......?"
-                	}
+                   echo "File exists......"
                 '''
             }
 
