@@ -122,7 +122,7 @@ pipeline {
             steps {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
                 
-                sh "chaos run experiments/experiment2.json"
+                sh ". myenv/bin/activate && chaos run experiments/experiment2.json"
                 //sh '''
 	            //    cd experiments
 	            //    pwd
