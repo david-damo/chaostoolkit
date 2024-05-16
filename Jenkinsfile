@@ -146,8 +146,8 @@ pipeline {
         }
         
     }
-    def fileExists(filePath) {
+}
+def fileExists(filePath) {
     def file = new File(filePath)
     return file.exists()
     }
-}
