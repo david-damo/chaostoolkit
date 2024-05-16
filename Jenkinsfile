@@ -128,15 +128,15 @@ pipeline {
 	                
 
                     // Check if the file exists
-                    script{
+                    //script{
                     def filePath = echo "sanjeev | sudo -S /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
-                    if (filePath) {
+                    if (fileExists(filePath)) {
                         echo "File exists: $filePath"
                         // Add steps here to execute if the file exists
                     } else {
                         error "File does not exist: $filePath"
                     }
-                	}
+                	//}
                 '''
             }
 
@@ -149,4 +149,9 @@ pipeline {
         
     }
 }
-
+def fileExists(filePath) {
+echo "File exists......"
+    def file = new File(filePath)
+    echo "File exists......?"
+    return file.exists()
+    }
