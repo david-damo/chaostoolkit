@@ -42,9 +42,9 @@ pipeline {
             {
             	sh '''
                     echo "sanjeev | sudo -S apt update"
-                    echo "sanjeev | sudo -S apt install -y python3 python3-pip"
-                    
-                    echo "sanjeev | sudo -S pip install virtualenv"
+                    echo "sanjeev | sudo -S apt install python3-pip"
+
+                    echo "sanjeev | sudo -S pip3 install virtualenv"
                     echo "sanjeev | sudo -S virtualenv myenv"
                     
                 '''
