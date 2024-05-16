@@ -127,15 +127,7 @@ pipeline {
 	                ls
 	                
 
-                    script{
-                    def filePath = echo "sanjeev | sudo -S /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
-                    if (fileExists(filePath)) {
-                        echo "File exists: $filePath"
-                        
-                    } else {
-                        error "File does not exist: $filePath"
-                    }
-                	}
+                    
                 '''
             }
 
