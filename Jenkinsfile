@@ -40,13 +40,7 @@ pipeline {
         {
             steps 
             {
-            	//withCredentials([string(credentialsId: env.PASSWORD_CREDENTIAL, variable: 'PASSWORD')]) {
-                    // Run the command with sudo and pass the password
-                    //sh "echo $PASSWORD | sudo -S apt update"
-                    //sh "echo $PASSWORD | sudo -S apt install -y python3 python3-pip"
-                    
-                    //}
-                sh '''
+            	sh '''
                     echo "sanjeev | sudo -S apt update"
                     echo "sanjeev | sudo -S apt install -y python3 python3-pip"
                     
@@ -54,8 +48,7 @@ pipeline {
                     echo "sanjeev | sudo -S virtualenv myenv"
                     
                 '''
-                //sh 'apt update'
-                //sh 'apt install -y python3 python3-pip'
+                
             }
         }
         
