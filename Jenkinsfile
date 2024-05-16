@@ -128,7 +128,7 @@ pipeline {
 	                
 
                     // Check if the file exists
-                    echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
+                    //echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
                     
                 '''
                 
