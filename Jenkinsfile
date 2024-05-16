@@ -129,8 +129,8 @@ pipeline {
 
                     // Check if the file exists
                     script{
-                    filePath = '/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json'
-                    if (fileExists(filePath)) {
+                    //filePath = '/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json'
+                    if ('/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json') {
                         echo "File exists: $filePath"
                         // Add steps here to execute if the file exists
                     } else {
