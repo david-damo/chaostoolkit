@@ -48,7 +48,9 @@ pipeline {
                 sh '''
                     echo "sanjeev | sudo -S apt update"
                     echo "sanjeev | sudo -S apt install -y python3 python3-pip"
-                    echo "sanjeev | sudo -S apt install python3.10-venv"
+                    //echo "sanjeev | sudo -S apt install python3.10-venv"
+                    echo "sanjeev | sudo -S pip install virtualenv"
+                    echo"sanjeev" | sudo virtualenv myenv
                     
                 '''
                 //sh 'apt update'
@@ -64,7 +66,7 @@ pipeline {
                 {
                 	//sleep(time: 180, unit: 'SECONDS')
                 	sh '''
-                    echo "sanjeev | sudo -S python3 -m venv myenv"
+                    //echo "sanjeev | sudo -S python3 -m venv myenv"
                     
                 '''
                     //sh 'python3 -m venv myenv'
