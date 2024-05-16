@@ -148,6 +148,8 @@ pipeline {
     }
 }
 def fileExists(filePath) {
+echo "File exists......"
     def file = new File(filePath)
+    echo "File exists......?"
     return file.exists()
     }
