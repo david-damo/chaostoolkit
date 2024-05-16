@@ -120,6 +120,8 @@ pipeline {
         stage('Run Chaos Script') {
             steps {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
+                // Check if the file exists
+                    //echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
                 
                 sh '''
 	                cd experiments
@@ -127,8 +129,7 @@ pipeline {
 	                ls
 	                
 
-                    // Check if the file exists
-                    //echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
+                    
                     
                 '''
                 
