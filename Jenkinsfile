@@ -58,12 +58,10 @@ pipeline {
             {
                 script 
                 {
-                	//sleep(time: 180, unit: 'SECONDS')
                 	sh '''
-                    //echo "sanjeev | sudo -S python3 -m venv myenv"
+                    echo "create Virtual Environment....."
                     
                 '''
-                    //sh 'python3 -m venv myenv'
                 }
             }
         }
