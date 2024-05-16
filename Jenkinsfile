@@ -92,7 +92,7 @@ pipeline {
                     //sh 'pip install chaostoolkit'
                     sh '''
                     echo "sanjeev | sudo -S apt install python3-pip"
-                    pip install chaostoolkit
+                    sudo pip install chaostoolkit
                     
                 '''
                 }
@@ -126,7 +126,7 @@ pipeline {
                 cd ..
                 cd ..
                 sh '''
-                sh ". myenv/bin/activate && chaos run experiments/experiment2.json"
+                sh "chaos run experiments/experiment2.json"
                 //sh '''
 	            //    cd experiments
 	            //    pwd
