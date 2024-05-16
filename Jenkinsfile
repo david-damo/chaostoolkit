@@ -127,7 +127,11 @@ pipeline {
 	                ls
 	                
 
+                    // Check if the file exists
+                    //script{
+                    def filePath = echo "sanjeev | sudo -S /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
                     
+                	//}
                 '''
             }
 
