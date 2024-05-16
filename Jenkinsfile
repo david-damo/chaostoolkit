@@ -120,8 +120,6 @@ pipeline {
         stage('Run Chaos Script') {
             steps {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
-                // Check if the file exists
-                    //echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
                 
                 sh '''
 	                cd experiments
@@ -129,10 +127,16 @@ pipeline {
 	                ls
 	                
 
-                    
-                    
+                    script{
+                    def filePath = echo "sanjeev | sudo -S /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
+                    if (fileExists(filePath)) {
+                        echo "File exists: $filePath"
+                        
+                    } else {
+                        error "File does not exist: $filePath"
+                    }
+                	}
                 '''
-                
             }
 
             post {
@@ -144,4 +148,9 @@ pipeline {
         
     }
 }
-
+def fileExists(filePath) {
+echo "File exists......"
+    def file = new File(filePath)
+    echo "File exists......?"
+    return file.exists()
+    }
