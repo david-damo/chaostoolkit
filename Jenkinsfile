@@ -75,7 +75,7 @@ pipeline {
                     //sh 'source myenv/bin/activate'
                     sh '''
                     cd myenv/bin
-                    ls -l
+                    ls
                     echo "sanjeev | sudo -S source myenv/bin/activate"
                     
                 '''
