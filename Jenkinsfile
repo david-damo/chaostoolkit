@@ -116,7 +116,7 @@ pipeline {
         when { expression { return fileExists ('/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json') } }
             steps {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
-                sh echo "sanjeev | sudo -S . myenv/bin/activate && chaos run experiments/experiment2.json"
+                //sh echo "sanjeev | sudo -S . myenv/bin/activate && chaos run experiments/experiment2.json"
                 sh '''
                 cd myenv
                 ls
@@ -125,7 +125,7 @@ pipeline {
                 cd ..
                 cd ..
                 sh '''
-           
+           		echo "sanjeev | sudo -S . myenv/bin/activate && chaos run experiments/experiment2.json"
                 //echo "sanjeev | sudo -S chaos run experiments/experiment2.json"
                 //sh '''
 	            //    cd experiments
