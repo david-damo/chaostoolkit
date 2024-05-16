@@ -118,7 +118,7 @@ pipeline {
             }
         }
         stage('Run Chaos Script') {
-        when { expression { return fileExists ('/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json') } }
+        when { expression { return fileExists ('/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment5.json') } }
             steps {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
                 
@@ -141,9 +141,4 @@ pipeline {
         
     }
 }
-def fileExists(filePath) {
-echo "File exists......"
-    def file = new File(filePath)
-    echo "File exists......?"
-    return file.exists()
-    }
+
