@@ -121,12 +121,13 @@ pipeline {
         when { expression { return fileExists ('/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json') } }
             steps {
                 //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
+                sh '''
                 cd myenv
                 ls
                 cd activate
                 ls
                 cd ../..
-                
+                sh '''
                 sh ". myenv/bin/activate && chaos run experiments/experiment2.json"
                 //sh '''
 	            //    cd experiments
