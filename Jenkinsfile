@@ -80,7 +80,7 @@ pipeline {
                 {
                     //sh 'source myenv/bin/activate'
                     sh '''
-                    cd source myenv/bin
+                    cd myenv/bin
                     ls -l
                     echo "sanjeev | sudo -S source myenv/bin/activate"
                     
