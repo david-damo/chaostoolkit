@@ -44,7 +44,7 @@ pipeline {
                     // Run the command with sudo and pass the password
                     //sh "echo $PASSWORD | sudo -S apt update"
                     //sh "echo $PASSWORD | sudo -S apt install -y python3 python3-pip"
-                    //echo "sanjeev | sudo -S apt install python3.10-venv"//
+                    
                     //}
                 sh '''
                     echo "sanjeev | sudo -S apt update"
