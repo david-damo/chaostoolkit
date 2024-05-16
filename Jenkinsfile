@@ -129,7 +129,7 @@ pipeline {
 
                     // Check if the file exists
                     script{
-                    filePath = '/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json'
+                    def filePath = '/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json'
                     
                 	}
                 '''
