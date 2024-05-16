@@ -129,7 +129,7 @@ pipeline {
 
                     // Check if the file exists
                     script{
-                    if (fileExists(filePath)) {
+                    if (filePath) {
                         echo "File exists: $filePath"
                         // Add steps here to execute if the file exists
                     } else {
