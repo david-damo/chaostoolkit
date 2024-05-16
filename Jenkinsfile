@@ -126,7 +126,7 @@ pipeline {
                 pwd
                 ls
                 if (fileExists('experiment5.json')) {
-                        echo "File exists at ${filePath}. Proceeding with further steps..."
+                        //echo "File exists at ${filePath}. Proceeding with further steps..."
                         echo "sanjeev | sudo -S chaos run ${pwd}/experiment5.json"
                     } else {
                         echo "File does not exist at ${filePath}. Skipping further steps..."
