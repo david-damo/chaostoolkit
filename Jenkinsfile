@@ -116,24 +116,10 @@ pipeline {
         stage('Run Chaos Script') {
         when { expression { return fileExists ('/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json') } }
             steps {
-                //sh ". /chaostoolkit/.venvs/chaostk/bin/activate && chaos run experiments/experiment2.json"
-                //sh echo "sanjeev | sudo -S . myenv/bin/activate && chaos run experiments/experiment2.json"
-                sh '''
-                cd myenv
-                ls
-                cd bin
-                ls
-                cd ..
-                cd ..
-                sh '''
-           		echo "sanjeev | sudo -S . myenv/bin/activate && chaos run experiments/experiment2.json"
-                //echo "sanjeev | sudo -S chaos run experiments/experiment2.json"
-                //sh '''
-	            //    cd experiments
-	            //    pwd
-	            //    ls
-	            //    echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"   
-                //'''
+                script {
+                    // Run your Chaos Toolkit experiment
+                    sh 'chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json'
+                }
             }
 
             post {
