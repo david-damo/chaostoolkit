@@ -117,7 +117,7 @@ pipeline {
         when { expression { return fileExists ('/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json') } }
             steps {
             	sh'''
-            	cd /var/lib/jenkins/workspace/chaos toolkit/experiments
+            	cd /var/lib/jenkins/workspace/chaos\ toolkit/experiments
             	pwd
             	sh'''
                 script {
