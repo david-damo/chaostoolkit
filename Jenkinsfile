@@ -41,6 +41,7 @@ pipeline {
             steps 
             {
             	sh '''
+            		ls
                     echo "sanjeev | sudo -S apt update"
                     echo "sanjeev | sudo -S apt install python3-pip"
 
