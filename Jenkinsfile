@@ -116,9 +116,13 @@ pipeline {
         stage('Run Chaos Script') {
         when { expression { return fileExists ('/var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json') } }
             steps {
+            	sh'''
+            	cd /var/lib/jenkins/workspace/chaos toolkit/experiments
+            	pwd
+            	sh'''
                 script {
                     // Run your Chaos Toolkit experiment
-                    sh 'chaos run /var/lib/jenkins/workspace/chaos\ toolkit/experiments/experiment2.json'
+                    sh 'chaos run /experiment2.json'
                 }
             }
 
