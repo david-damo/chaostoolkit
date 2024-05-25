@@ -118,9 +118,7 @@ pipeline {
             steps {
                 script {
                     // Run your Chaos Toolkit experiment
-                    sh'''
-                     echo "sanjeev | sudo -S chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json"
-                     sh'''
+                    sh 'chaos run /var/lib/jenkins/workspace/chaos toolkit/experiments/experiment2.json'
                 }
             }
 
