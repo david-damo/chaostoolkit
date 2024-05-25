@@ -119,10 +119,11 @@ pipeline {
             	sh'''
             	cd /var/lib/jenkins/workspace/chaostk/experiments
             	pwd
+            	ls
             	sh'''
                 script {
                     // Run your Chaos Toolkit experiment
-                    sh 'chaos run experiment2.json'
+                    sh 'chaos run /var/lib/jenkins/workspace/chaostk/experiments/experiment2.json'
                 }
             }
 
