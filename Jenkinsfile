@@ -122,7 +122,7 @@ pipeline {
             	sh'''
                 script {
                     // Run your Chaos Toolkit experiment
-                    sh 'chaos run /experiment2.json'
+                    sh 'chaos run experiment2.json'
                 }
             }
 
